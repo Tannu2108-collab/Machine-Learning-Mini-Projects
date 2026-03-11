@@ -1,50 +1,19 @@
-# HOUSE PRICE PREDICTION PROJECT
-import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-
-from sklearn.datasets import fetch_california_housing
-from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error, r2_score
-housing = fetch_california_housing()
-df = pd.DataFrame(housing.data, columns=housing.feature_names)
-df['Price'] = housing.target
 
-print("Dataset Shape:", df.shape)
-print(df.head())
-plt.scatter(df['MedInc'], df['Price'])
-plt.xlabel("Median Income")
-plt.ylabel("House Price")
-plt.title("Income vs House Price")
-plt.show()
+# Data load karna
+data = pd.read_csv("house_data.csv")
 
-X = df.drop("Price", axis=1)
-y = df["Price"]
+# Features aur Target select karna
+X = data[['Area']] 
+y = data['Price']
 
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
-)
-
+# Model train karna
 model = LinearRegression()
-model.fit(X_train, y_train)
+model.fit(X, y)
 
-y_pred = model.predict(X_test)
-mse = mean_squared_error(y_test, y_pred)
-r2 = r2_score(y_test, y_pred)
+# Prediction (Warning se bachne ke liye DataFrame use kiya)
+test_data = pd.DataFrame([[2000]], columns=['Area'])
+prediction = model.predict(test_data)
 
-print("\nModel Evaluation:")
-print("Mean Squared Error:", mse)
-print("R2 Score:", r2)
-comparison = pd.DataFrame({
-    "Actual Price": y_test.values,
-    "Predicted Price": y_pred
-})
-
-print("\nSample Predictions:")
-print(comparison.head())
-plt.scatter(y_test, y_pred)
-plt.xlabel("Actual Price")
-plt.ylabel("Predicted Price")
-plt.title("Actual vs Predicted House Prices")
-plt.show()
+print(f"Predicted House Price for 2000 sq ft: {prediction[0]:.2f}")
