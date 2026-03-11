@@ -1,28 +1,23 @@
-# House Price Prediction using Linear Regression
+# Machine Learning Mini-Projects
 
-This project predicts house prices based on the area of the house using a Linear Regression model.
+Welcome to my repository! This collection showcases various machine learning projects I have built to practice data analysis, model building, and evaluation.
 
-## Technologies Used
-- Python
-- Pandas
-- Scikit-learn
+## 🚀 Projects Overview
 
-## Files
-- house_data.csv → Dataset
-- house_price_prediction.py → Python code
-- README.md → Project description
+| Project Name | Algorithm/Technique | Key Focus |
+| :--- | :--- | :--- |
+| [Simple House Price Prediction](01_Simple_House_Prediction/) | Simple Linear Regression | Basic data handling & Visualization |
+| [Advanced House Price Prediction](02_Advanced_House_Prediction/) | Multiple Linear Regression | Model Evaluation (MSE, R2 Score) |
+| [Road Accident Prediction](03_Road_Accident_Prediction/) | Classification | Pattern recognition & Safety analysis |
 
-## Output
-The model predicts the price of a house for a given area.
+## 🛠️ Tech Stack
+* **Language:** Python
+* **Libraries:** Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn
 
+## 📈 Goals
+* To understand how different ML algorithms work with real-world datasets.
+* To practice writing clean, modular, and well-documented code.
+* To improve data visualization and feature engineering skills.
 
-### 🚗 Road Accident Prediction
-This project aims to predict the severity of road accidents based on various factors like weather, light conditions, and road types.
-
-### 🛠️ Technologies Used
-* **Python**
-* **Pandas** (Data cleaning)
-* **Scikit-learn** (Machine Learning model)
-
-### 📂 Dataset
-The dataset contains information about accidents, including environmental and road conditions.
+---
+*Feel free to explore each folder for the source code and specific documentation.*
