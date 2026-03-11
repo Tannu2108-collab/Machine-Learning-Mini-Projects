@@ -16,7 +16,7 @@ This project predicts house prices based on the area of the house using a Linear
 The model predicts the price of a house for a given area.
 
 
-### 🚗 Road Accident Severity Prediction
+### 🚗 Road Accident Prediction
 This project aims to predict the severity of road accidents based on various factors like weather, light conditions, and road types.
 
 ### 🛠️ Technologies Used
